@@ -65,3 +65,5 @@ function pmprosm_is_iu_post_user_import($user_id) {
 	}
 }
 add_action("is_iu_post_user_import", "pmprosm_is_iu_post_user_import", 20);
+
+echo 'hello world';
