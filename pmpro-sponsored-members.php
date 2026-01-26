@@ -1,49 +1,51 @@
 <?php
-/*
-Plugin Name: Paid Memberships Pro - Sponsored Members Add On
-Plugin URI: https://www.paidmembershipspro.com/add-ons/pmpro-sponsored-members/
-Description: Generate discount code for a main account holder to distribute to sponsored members.
-Version: 0.10
-Author: Paid Memberships Pro
-Author URI: https://www.paidmembershipspro.com
-Text Domain: pmpro-sponsored-members
-Domain Path: /languages
+/**
+ * Plugin Name: Paid Memberships Pro - Sponsored Members Add On
+ * Plugin URI: https://www.paidmembershipspro.com/add-ons/pmpro-sponsored-members/
+ * Description: Generate discount code for a main account holder to distribute to sponsored members.
+ * Version: 0.10
+ * Author: Paid Memberships Pro
+ * Author URI: https://www.paidmembershipspro.com
+ * Text Domain: pmpro-sponsored-members
+ * Domain Path: /languages
+ */
+
+/**
+ * Set these to the ids of your main and sponsored levels.
+ *
+ * Now using a global array so you can have multiple main and sponsored levels.
+ * Array keys should be the main account level.
+ *
+ * global $pmprosm_sponsored_account_levels;
+ * $pmprosm_sponsored_account_levels = array(
+ * //set 5 seats at checkout
+ * 1 => array(
+ * 'main_level_id' => 1,        //redundant but useful
+ * 'sponsored_level_id' => array(1,2),    //array or single id
+ * 'seats' => 5
+ * ),
+ * //seats based on field at checkout
+ * 3 => array(
+ * 'main_level_id' => 3,        //redundant but useful
+ * 'sponsored_level_id' => 4,
+ * 'seat_cost' => 250,
+ * 'max_seats' => 10
+ * )
+ * );
 */
 
-/*
-	Set these to the ids of your main and sponsored levels.
-
-	Now using a global array so you can have multiple main and sponsored levels.
-	Array keys should be the main account level.
-
-	global $pmprosm_sponsored_account_levels;
-	$pmprosm_sponsored_account_levels = array(
-		//set 5 seats at checkout
-		1 => array(
-			'main_level_id' => 1,		//redundant but useful
-			'sponsored_level_id' => array(1,2),	//array or single id
-			'seats' => 5
-		),
-		//seats based on field at checkout
-		3 => array(
-			'main_level_id' => 3,		//redundant but useful
-			'sponsored_level_id' => 4,
-			'seat_cost' => 250,
-			'max_seats' => 10
-		)
-	);
+/**
+ * Set $pmprosm_sponsored_account_levels above here or in a custom plugin.
 */
 
-/*
-	Set $pmprosm_sponsored_account_levels above here or in a custom plugin.
-*/
-
-//old constant values for reference. not used anymore
-//define('PMPROSM_MAIN_ACCOUNT_LEVEL', 1);
-//define('PMPROSM_SPONSORED_ACCOUNT_LEVEL', 2);
-//define('PMPROSM_NUM_SEATS', 5);
-//define('PMPROSM_SEAT_COST', 250);
-//define('PMPROSM_MAX_SEATS', 10);
+/**
+ * //old constant values for reference. not used anymore
+ * //define('PMPROSM_MAIN_ACCOUNT_LEVEL', 1);
+ * //define('PMPROSM_SPONSORED_ACCOUNT_LEVEL', 2);
+ * //define('PMPROSM_NUM_SEATS', 5);
+ * //define('PMPROSM_SEAT_COST', 250);
+ * //define('PMPROSM_MAX_SEATS', 10);
+ */
 
 /**
  * Localize text for translations.
